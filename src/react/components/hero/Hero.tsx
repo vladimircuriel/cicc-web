@@ -5,6 +5,8 @@ export default function Hero() {
         src="/hero.webp"
         alt="Comité de Ingeniería en Ciencias de la Computación - Hero"
         className="absolute inset-0 z-0 object-cover w-full h-full"
+        loading="eager"
+        decoding="async"
       />
 
       <div className="relative z-10 flex items-center justify-start px-4 h-full w-full bg-[linear-gradient(110deg,#00589b_20%,#001b3060_100%)]">
@@ -26,8 +28,20 @@ export default function Hero() {
           </a>
         </div>
         <div className="absolute items-center hidden lg:flex gap-x-6 bottom-4 right-4">
-          <img src="/pucmm.webp" alt="pucmm-logo" className="size-28 lg:size-44" />
-          <img src="/favicon.webp" alt="cicc-logo" className="size-28 lg:size-44" />
+          <img
+            src="/pucmm.webp"
+            alt="pucmm-logo"
+            className="size-28 lg:size-44"
+            loading="eager"
+            decoding="async"
+          />
+          <img
+            src="/favicon.webp"
+            alt="cicc-logo"
+            className="size-28 lg:size-44"
+            loading="eager"
+            decoding="async"
+          />
         </div>
       </div>
     </section>

@@ -1,8 +1,10 @@
 ---
-import "@fontsource-variable/onest";
-import "../styles/global.css";
-import Hero from "@components/hero/Hero";
-import Navbar from "@components/navigation/Navbar";
+import '@fontsource-variable/onest'
+import '../styles/global.css'
+import { ClientRouter } from 'astro:transitions'
+import Hero from '@components/hero/Hero'
+import Footer from '@components/navigation/Footer'
+import Navbar from '@components/navigation/Navbar'
 ---
 
 <!doctype html>
@@ -17,6 +19,7 @@ import Navbar from "@components/navigation/Navbar";
       name="description"
       content="Comité de Estudiantes de Ingeniería Ciencias de la Computación de la universidad PUCMM Campus Santiago"
     />
+    <ClientRouter />
   </head>
   <body class="flex flex-col min-h-screen">
     <header>
@@ -28,6 +31,8 @@ import Navbar from "@components/navigation/Navbar";
       <slot />
     </main>
 
-    <footer>testing</footer>
+    <footer>
+      <Footer />
+    </footer>
   </body>
 </html>

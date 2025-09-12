@@ -61,7 +61,7 @@ function HomePageLink() {
       <img
         src="/favicon.webp"
         alt="cicc-logo"
-        loading="lazy"
+        loading="eager"
         decoding="async"
         className="size-12"
       />
