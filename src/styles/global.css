@@ -1,0 +1,33 @@
+/** biome-ignore-all lint/suspicious/noUnknownAtRules: tailwindcss v4 directives */
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Onest Variable", "sans-serif";
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  background-color: #f9f9f9;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: #111827;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
