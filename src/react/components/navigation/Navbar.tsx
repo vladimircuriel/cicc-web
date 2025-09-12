@@ -4,7 +4,10 @@ export default function Navbar() {
   const { pathname, navbarRef, isMenuOpen: isOpen, setIsMenuOpen: setIsOpen } = useNavbar()
 
   return (
-    <nav ref={navbarRef} className="sticky top-0 z-50 flex items-center w-full p-4 bg-accent">
+    <nav
+      ref={navbarRef}
+      className="fixed top-0 z-50 flex items-center w-full p-4 bg-accent lg:bg-accent/30"
+    >
       {/* Desktop */}
       <div className="items-center justify-between hidden w-full lg:flex">
         <HomePageLink />

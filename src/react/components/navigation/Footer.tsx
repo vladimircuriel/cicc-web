@@ -7,7 +7,7 @@ import XIcon from '@components/icons/XIcon'
 
 export default function Footer() {
   return (
-    <section className="flex justify-center bg-slate-100">
+    <section className="flex justify-center p-5 bg-slate-100">
       <div className="flex flex-col items-center gap-4 justify-evenly">
         <div className="flex items-center justify-center gap-6">
           <a href="/">
