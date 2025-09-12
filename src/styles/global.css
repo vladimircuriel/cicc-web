@@ -4,6 +4,13 @@
 @theme {
   --font-sans: "Onest Variable", "sans-serif";
 }
+@theme {
+  --color-primary: #00589b;
+  --color-secondary: #e9a900;
+  --color-accent: #004376;
+  --color-accent-dark: #001b30;
+  --color-accent-light: #d3d3d3;
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -18,12 +25,6 @@ html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
   color: #111827;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 @media (prefers-reduced-motion: reduce) {

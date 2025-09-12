@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/onest";
 import "../styles/global.css";
+import Navbar from "@components/navigation/Navbar";
 ---
 
 <!doctype html>
@@ -16,7 +17,15 @@ import "../styles/global.css";
       content="Comité de Estudiantes de Ingeniería Ciencias de la Computación de la universidad PUCMM Campus Santiago"
     />
   </head>
-  <body>
-    <slot />
+  <body class="flex flex-col min-h-screen">
+    <header>
+      <Navbar client:only="react" />
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer>testing</footer>
   </body>
 </html>
