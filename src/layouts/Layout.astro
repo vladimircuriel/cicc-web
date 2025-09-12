@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/onest";
 import "../styles/global.css";
+import Hero from "@components/hero/Hero";
 import Navbar from "@components/navigation/Navbar";
 ---
 
@@ -20,6 +21,7 @@ import Navbar from "@components/navigation/Navbar";
   <body class="flex flex-col min-h-screen">
     <header>
       <Navbar client:only="react" />
+      <Hero client:only="react" />
     </header>
 
     <main class="flex-1">

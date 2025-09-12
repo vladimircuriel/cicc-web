@@ -4,12 +4,14 @@
 @theme {
   --font-sans: "Onest Variable", "sans-serif";
 }
+
 @theme {
   --color-primary: #00589b;
   --color-secondary: #e9a900;
   --color-accent: #004376;
   --color-accent-dark: #001b30;
   --color-accent-light: #d3d3d3;
+  --color-hero-gradient: linear-gradient(110deg, #00589b 20%, #001b3060 100%);
 }
 
 ::-webkit-scrollbar {
