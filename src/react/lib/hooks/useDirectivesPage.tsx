@@ -22,5 +22,5 @@ export default function useDirectivesPages() {
     },
   )
 
-  return { directivesData: data || null, isLoading, error }
+  return { directivesData: data || null, isLoading, error, year }
 }

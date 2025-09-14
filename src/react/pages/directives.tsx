@@ -1,11 +1,12 @@
 import MemberCard from '@components/cards/memberCard/MemberCard'
 import Loading from '@components/loading/Loading'
 import Timeline from '@components/timeline/Timeline'
+import TimelineSelect from '@components/timeline/TimelineSelect'
 import Title from '@components/title/Title'
 import useDirectivesPages from '@lib/hooks/useDirectivesPage'
 
 export default function Page() {
-  const { directivesData, isLoading } = useDirectivesPages()
+  const { directivesData, isLoading, year } = useDirectivesPages()
 
   if (isLoading) {
     return <Loading />
@@ -18,6 +19,12 @@ export default function Page() {
       <div className="w-full my-5">
         {directivesData?.allDirectives && directivesData.allDirectives.length > 0 && (
           <Timeline years={directivesData.allDirectives} currentYear={directivesData.currentYear} />
+        )}
+        {directivesData?.allDirectives && directivesData.allDirectives.length > 0 && (
+          <TimelineSelect
+            years={directivesData.allDirectives}
+            currentYear={Number(year ?? directivesData.currentYear)}
+          />
         )}
       </div>
 
@@ -32,7 +39,7 @@ export default function Page() {
       )}
 
       {directivesData?.committeeImage && (
-        <div className="w-full mb-20">
+        <div className="w-full p-4 mb-20">
           <Title>Miembros</Title>
 
           <img
