@@ -55,7 +55,7 @@ To run this project locally, follow these steps.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/vladimircuriel/cicc-web.git
+git clone https://github.com/cicc-pucmm/cicc-web
 cd cicc-web
 ```
 
