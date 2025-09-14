@@ -44,7 +44,7 @@ jobs:
           name: build-dist
           path: dist
 
-      - name: FTP Deploy (FTPS explícito)
+      - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
