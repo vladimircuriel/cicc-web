@@ -1,4 +1,5 @@
 import Activity from '@components/activity/Activity'
+import Loading from '@components/loading/Loading'
 import Pagination from '@components/pagination/Pagination'
 import Title from '@components/title/Title'
 import useActivitiesPage from '@lib/hooks/useActivitiesPage'
@@ -6,7 +7,11 @@ import usePagination from '@lib/hooks/usePagination'
 
 export default function Page() {
   const { page, handleNextPage, handlePrevPage, handleGoToPage } = usePagination()
-  const { paginatedActivitiesData, isLoading, error } = useActivitiesPage({ page, perPage: 5 })
+  const { paginatedActivitiesData, isLoading } = useActivitiesPage({ page, perPage: 5 })
+
+  if (isLoading) {
+    return <Loading />
+  }
 
   return (
     <div className="container flex flex-col items-center mx-auto">
