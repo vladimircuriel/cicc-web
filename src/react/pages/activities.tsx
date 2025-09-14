@@ -14,7 +14,7 @@ export default function Page() {
   }
 
   return (
-    <div className="container flex flex-col items-center mx-auto">
+    <div className="container flex flex-col items-center p-2 mx-auto">
       <div id="activities" className="relative">
         <Title>Nuestras Actividades</Title>
 
