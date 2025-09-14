@@ -10,7 +10,7 @@ export default function ImageDivider({ image = 'divider-banner.webp' }: ImageDiv
         alt="Divider"
         loading="lazy"
         decoding="async"
-        className="absolute inset-0 object-cover w-full h-full opacity-10"
+        className="absolute inset-0 object-cover w-full h-full opacity-30"
       />
     </div>
   )
