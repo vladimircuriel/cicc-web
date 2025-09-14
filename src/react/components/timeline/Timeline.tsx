@@ -5,7 +5,7 @@ type TimelineProps = {
 
 export default function Timeline({ years, currentYear }: TimelineProps) {
   return (
-    <div className="relative flex flex-row-reverse items-center justify-evenly">
+    <div className="relative flex-row-reverse items-center hidden justify-evenly lg:flex">
       <div className="absolute inset-0 flex items-center mx-auto">
         <div className="relative w-full h-[2px] bg-primary">
           <div className="absolute -left-[7px] -top-[25px] size-14 bg-white rounded-full flex items-center p-px border-2 border-secondary justify-center">
