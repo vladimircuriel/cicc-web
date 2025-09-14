@@ -1,6 +1,4 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: we have no id */
-import usePagination from '@lib/hooks/usePagination'
-
 type PaginationProps = {
   page: number
   totalItems: number
@@ -13,9 +11,7 @@ type PaginationProps = {
 
 export default function Pagination({
   page,
-  totalItems,
   totalPages,
-  itemsPerPage,
   onNext,
   onPrev,
   onGoToPage,
@@ -51,7 +47,7 @@ export default function Pagination({
         type="button"
         className="transition-colors rounded-full size-10 bg-primary hover:bg-primary/80 disabled:cursor-not-allowed disabled:bg-gray-300"
         onClick={onNext}
-        disabled={page >= Math.ceil(totalItems / itemsPerPage)}
+        disabled={page >= totalPages}
         aria-label="Next Page"
       >
         &gt;
