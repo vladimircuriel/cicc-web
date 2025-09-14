@@ -3,13 +3,13 @@ import type { PaginatedActivitiesDTO } from '@lib/dto/activity.dto'
 import fetcher from '@lib/utils/fetcher'
 import useSWR from 'swr'
 
-type UseActivitiesPageProps = {
+type useActivitiesPageProps = {
   page: number
   perPage?: number
 }
 
-export default function useActivitiesPage({ page = 1, perPage = 5 }: UseActivitiesPageProps) {
-  const url = `${PUBLIC_API_URL}endpoint-acf-activities?page=${page}&${perPage}=5`
+export default function useActivitiesPage({ page, perPage = 5 }: useActivitiesPageProps) {
+  const url = `${PUBLIC_API_URL}endpoint-acf-activities?page=${page}&perPage=${perPage}`
   const headers = {
     Authorization: `Basic ${TOKEN}`,
     'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ export default function useActivitiesPage({ page = 1, perPage = 5 }: UseActiviti
     url,
     (url: string) => fetcher(url, { headers }),
     {
-      dedupingInterval: 300000,
+      dedupingInterval: 300_000,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
       revalidateIfStale: false,
