@@ -1,13 +1,19 @@
+import useHero from '@lib/hooks/useHero'
+
 export default function Hero() {
+  const { heroData, isLoading } = useHero()
+
   return (
-    <section className="relative h-[80dvh]">
-      <img
-        src="/hero.webp"
-        alt="Comité de Ingeniería en Ciencias de la Computación - Hero"
-        className="absolute inset-0 z-0 object-cover w-full h-full"
-        loading="eager"
-        decoding="async"
-      />
+    <section className="relative h-[80dvh] bg-white">
+      {heroData?.image && (
+        <img
+          src={heroData.image}
+          alt="Comité de Ingeniería en Ciencias de la Computación - Hero"
+          className="absolute inset-0 z-0 object-cover w-full h-full"
+          loading="eager"
+          decoding="async"
+        />
+      )}
 
       <div className="relative z-10 flex items-center justify-start px-4 h-full w-full bg-[linear-gradient(110deg,#00589b_20%,#001b3060_100%)]">
         <div className="flex flex-col items-center justify-center gap-y-4">
@@ -16,16 +22,18 @@ export default function Hero() {
             INGENIERÍA EN <br /> CIENCIAS DE LA <br />
             <span className="text-secondary">COMPUTACIÓN</span>
           </h1>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://forms.office.com/r/Ln0F5E42cU"
-            className="px-6 py-2 transition-transform rounded-full bg-secondary hover:scale-105 hover:bg-secondary/95"
-          >
-            <span className="text-lg font-medium text-center text-white">
-              Forma parte del comité
-            </span>
-          </a>
+          {heroData?.form && (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={heroData.form}
+              className="px-6 py-2 transition-transform rounded-full bg-secondary hover:scale-105 hover:bg-secondary/95"
+            >
+              <span className="text-lg font-medium text-center text-white">
+                Forma parte del comité
+              </span>
+            </a>
+          )}
         </div>
         <div className="absolute items-center hidden lg:flex gap-x-6 bottom-4 right-4">
           <img
