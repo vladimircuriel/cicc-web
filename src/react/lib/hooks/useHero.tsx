@@ -1,23 +1,25 @@
+import { PUBLIC_API_URL, TOKEN } from '@lib/constants/settings'
 import type { HeroDTO } from '@lib/dto/hero.dto'
-import { getHero } from '@lib/fetch/hero.fetch'
-import { useEffect, useState } from 'react'
+import fetcher from '@lib/utils/fetcher'
+import useSWR from 'swr'
 
 export default function useHero() {
-  const [heroData, setHeroData] = useState<HeroDTO | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
+  const url = `${PUBLIC_API_URL}endpoint-acf-current-committee`
+  const headers = {
+    Authorization: `Basic ${TOKEN}`,
+    'Content-Type': 'application/json',
+  }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true)
-      const [data, error] = await getHero()
-      if (error) throw error
+  const { data, error, isLoading } = useSWR<HeroDTO>(
+    url,
+    (url: string) => fetcher(url, { headers }),
+    {
+      dedupingInterval: 300000,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      revalidateIfStale: false,
+    },
+  )
 
-      setHeroData(data)
-      setIsLoading(false)
-    }
-
-    fetchData()
-  }, [])
-
-  return { heroData, isLoading }
+  return { heroData: data || null, isLoading, error }
 }

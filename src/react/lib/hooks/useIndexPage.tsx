@@ -1,23 +1,25 @@
+import { PUBLIC_API_URL, TOKEN } from '@lib/constants/settings'
 import type { IndexDTO } from '@lib/dto/index.dto'
-import { getIndexPage } from '@lib/fetch/index.fetch'
-import { useEffect, useState } from 'react'
+import fetcher from '@lib/utils/fetcher'
+import useSWR from 'swr'
 
 export default function useIndexPage() {
-  const [indexData, setIndexData] = useState<IndexDTO | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
+  const url = `${PUBLIC_API_URL}endpoint-acf-index-page`
+  const headers = {
+    Authorization: `Basic ${TOKEN}`,
+    'Content-Type': 'application/json',
+  }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true)
-      const [data, error] = await getIndexPage()
-      if (error) throw error
+  const { data, error, isLoading } = useSWR<IndexDTO>(
+    url,
+    (url: string) => fetcher(url, { headers }),
+    {
+      dedupingInterval: 300000,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      revalidateIfStale: false,
+    },
+  )
 
-      setIndexData(data)
-      setIsLoading(false)
-    }
-
-    fetchData()
-  }, [])
-
-  return { indexData, isLoading }
+  return { indexData: data || null, isLoading, error }
 }

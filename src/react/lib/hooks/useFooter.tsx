@@ -1,23 +1,25 @@
+import { PUBLIC_API_URL, TOKEN } from '@lib/constants/settings'
 import type { FooterDTO } from '@lib/dto/footer.dto'
-import { getFooter } from '@lib/fetch/footer.fetch'
-import { useEffect, useState } from 'react'
+import fetcher from '@lib/utils/fetcher'
+import useSWR from 'swr'
 
 export default function useFooter() {
-  const [footerData, setFooterData] = useState<FooterDTO | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
+  const url = `${PUBLIC_API_URL}endpoint-acf-footer`
+  const headers = {
+    Authorization: `Basic ${TOKEN}`,
+    'Content-Type': 'application/json',
+  }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true)
-      const [data, error] = await getFooter()
-      if (error) throw error
+  const { data, error, isLoading } = useSWR<FooterDTO>(
+    url,
+    (url: string) => fetcher(url, { headers }),
+    {
+      dedupingInterval: 300000,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      revalidateIfStale: false,
+    },
+  )
 
-      setFooterData(data)
-      setIsLoading(false)
-    }
-
-    fetchData()
-  }, [])
-
-  return { footerData, isLoading }
+  return { footerData: data || null, isLoading, error }
 }
