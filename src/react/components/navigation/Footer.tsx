@@ -13,7 +13,7 @@ export default function Footer() {
 
   return (
     <section className="flex flex-col justify-center p-5 bg-slate-100">
-      <div className="flex items-center justify-evenly">
+      <div className="flex flex-col items-center gap-6 lg:flex-row justify-evenly">
         <div className="flex flex-col items-center gap-4 justify-evenly">
           <div className="flex items-center justify-center gap-6">
             <a href="/">
