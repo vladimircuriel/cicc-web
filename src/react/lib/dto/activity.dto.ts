@@ -1,3 +1,10 @@
+import type { PaginationDTO } from './pagination.dto'
+
+export type PaginatedActivitiesDTO = {
+  data: ActivityDTO[]
+  pagination: PaginationDTO
+}
+
 export type ActivityDTO = {
   name: string
   description: string
