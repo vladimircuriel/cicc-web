@@ -1,10 +1,8 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from '@layouts/Layout.astro'
+import Page from '@pages/index'
 ---
 
-<Layout
-  title="LocAI Chat"
-  description="LocAI Chat - Offline Local Multi-Model ChatBot with AI"
->
-  <h1>Hola mundo</h1>
+<Layout>
+  <Page client:only="react" />
 </Layout>

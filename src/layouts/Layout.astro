@@ -8,7 +8,7 @@ import Navbar from "@components/navigation/Navbar";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -21,7 +21,9 @@ import Navbar from "@components/navigation/Navbar";
     />
     <ClientRouter />
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body
+    class="flex flex-col min-h-screen absolute inset-0 -z-10 h-dvh w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
+  >
     <header>
       <Navbar client:only="react" />
       <Hero client:only="react" />
@@ -32,7 +34,7 @@ import Navbar from "@components/navigation/Navbar";
     </main>
 
     <footer>
-      <Footer />
+      <Footer client:only="react" />
     </footer>
   </body>
 </html>
