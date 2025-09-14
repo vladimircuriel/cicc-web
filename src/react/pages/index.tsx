@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <div className="container flex flex-col items-center justify-center mx-auto">
       {cards && cards.length > 0 && (
-        <div id="about" className="relative">
+        <div id="about" className="relative p-2">
           <Title>Nosotros</Title>
           <div className="flex flex-wrap items-center justify-center gap-8">
             {cards?.map((card) => (
