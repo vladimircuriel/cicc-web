@@ -17,11 +17,11 @@
 
 ---
 
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/vladimircuriel/cicc-web)
-
 This is the official website for the CICC (Comité de Estudiantes de Ingeniería en Ciencias de la Computación) at the Pontificia Universidad Católica Madre y Maestra (PUCMM), Santiago campus. The site is built with Astro and React, providing information about the committee, its members, activities, and frequently asked questions.
 
 ![Homepage Screenshot](https://github.com/user-attachments/assets/033bf188-0c86-4281-9f19-c7fabcda67f7)
+
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/vladimircuriel/cicc-web)
 
 ## Features
 
