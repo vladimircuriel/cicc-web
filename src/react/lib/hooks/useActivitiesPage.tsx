@@ -9,7 +9,8 @@ type useActivitiesPageProps = {
 }
 
 export default function useActivitiesPage({ page, perPage = 5 }: useActivitiesPageProps) {
-  const url = `${PUBLIC_API_URL}endpoint-acf-activities?page=${page}&perPage=${perPage}`
+  const params = new URLSearchParams({ page: page.toString(), perPage: perPage.toString() })
+  const url = `${PUBLIC_API_URL}endpoint-acf-activities?${params.toString()}`
   const headers = {
     Authorization: `Basic ${TOKEN}`,
     'Content-Type': 'application/json',
