@@ -18,7 +18,10 @@ export default function Page() {
 
       <div className="w-full my-5">
         {directivesData?.allDirectives && directivesData.allDirectives.length > 0 && (
-          <Timeline years={directivesData.allDirectives} currentYear={directivesData.currentYear} />
+          <Timeline
+            years={directivesData.allDirectives}
+            currentYear={Number(year ?? directivesData.currentYear)}
+          />
         )}
         {directivesData?.allDirectives && directivesData.allDirectives.length > 0 && (
           <TimelineSelect
