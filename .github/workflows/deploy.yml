@@ -14,20 +14,36 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Create .env
-        run: |
-          echo "${{ secrets.ENV }}" > .env
+        run: echo "${{ secrets.ENV }}" > .env
 
       - name: Build the site
         uses: withastro/action@v3
+
+      # opcional: si necesitas el .env en runtime dentro de dist
+      - name: Copy .env into dist
+        run: cp .env dist/.env
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-dist
+          path: dist
+          if-no-files-found: error
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-dist
+          path: dist
+
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
