@@ -15,9 +15,9 @@ export default function Hero() {
         />
       )}
 
-      <div className="relative z-10 flex items-center justify-start px-4 h-full w-full bg-[linear-gradient(110deg,#00589b_20%,#001b3060_100%)]">
+      <div className="relative z-10 flex items-center lg:justify-start justify-center px-4 h-full w-full bg-[linear-gradient(110deg,#00589b_20%,#001b3060_100%)]">
         <div className="flex flex-col items-center justify-center gap-y-4">
-          <h1 className="text-5xl font-bold text-center text-pretty text-white [text-shadow:_5px_6px_0_rgb(0_0_0_/_40%)] w-full lg:text-6xl">
+          <h1 className="text-4xl font-bold text-center text-pretty text-white [text-shadow:_5px_6px_0_rgb(0_0_0_/_40%)] w-full lg:text-6xl">
             <span className="text-secondary">COMITÉ</span> DE <br />
             INGENIERÍA EN <br /> CIENCIAS DE LA <br />
             <span className="text-secondary">COMPUTACIÓN</span>
