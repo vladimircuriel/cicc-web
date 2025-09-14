@@ -7,6 +7,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://ce-icc.pucmm.edu.do",
+  base: "/",
   integrations: [react()],
 
   vite: {
