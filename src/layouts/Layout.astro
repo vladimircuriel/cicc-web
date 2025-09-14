@@ -5,6 +5,16 @@ import { ClientRouter } from 'astro:transitions'
 import Hero from '@components/hero/Hero'
 import Footer from '@components/navigation/Footer'
 import Navbar from '@components/navigation/Navbar'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'Comité de Estudiantes de Ing. Ciencias de la Computación',
+  description = 'Comité de Estudiantes de Ingeniería Ciencias de la Computación de la universidad PUCMM Campus Santiago',
+}: Props = Astro.props
 ---
 
 <!doctype html>
@@ -14,10 +24,10 @@ import Navbar from '@components/navigation/Navbar'
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/webp" href="/favicon.webp" />
     <meta name="generator" content={Astro.generator} />
-    <title>Comité de Estudiantes de Ing. Ciencias de la Computación</title>
+    <title>{title}</title>
     <meta
       name="description"
-      content="Comité de Estudiantes de Ingeniería Ciencias de la Computación de la universidad PUCMM Campus Santiago"
+      content={description}
     />
     <ClientRouter />
   </head>
