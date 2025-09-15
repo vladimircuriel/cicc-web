@@ -43,7 +43,7 @@ This is the official website for the CICC (Comité de Estudiantes de Ingeniería
 *   **Code Quality**: [Biome](https://biomejs.dev/) for formatting and linting.
 *   **Package Manager**: [pnpm](https://pnpm.io/)
 
-## 🚀 Getting Started
+## Getting Started
 
 To run this project locally, follow these steps.
 
