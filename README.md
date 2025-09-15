@@ -108,7 +108,7 @@ The project is organized with a separation between Astro's file-based routing an
 └── package.json         # Project dependencies and scripts
 ```
 
-## ⚙️ Deployment
+## Deployment
 
 This project is automatically deployed to a PUCMM server via FTP using a GitHub Actions workflow. The workflow is triggered on every push to the `main` branch.
 
