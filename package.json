@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "biome": "biome check --write"
+    "biome": "biome check --write",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/react": "4.3.1",
@@ -23,7 +24,10 @@
     "tailwindcss": "4.1.13"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.4"
+    "@biomejs/biome": "2.2.4",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7"
   },
   "packageManager": "pnpm@10.14.0"
 }
