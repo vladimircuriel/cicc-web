@@ -23,10 +23,6 @@ jobs:
       - name: Build the site
         uses: withastro/action@v3
 
-      # opcional: si necesitas el .env en runtime dentro de dist
-      - name: Copy .env into dist
-        run: cp .env dist/.env
-
       - name: Upload dist artifact
         uses: actions/upload-artifact@v4
         with:
