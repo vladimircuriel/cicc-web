@@ -33,8 +33,8 @@ importers:
         specifier: 19.1.1
         version: 19.1.1(react@19.1.1)
       swiper:
-        specifier: ^12.0.1
-        version: 12.0.1
+        specifier: ^12.0.2
+        version: 12.0.2
       swr:
         specifier: ^2.3.6
         version: 2.3.6(react@19.1.1)
@@ -1956,8 +1956,8 @@ packages:
     resolution: {integrity: sha512-gmBGslpoQJtgnMAvOVqGZpEz9dyoKTCzy2nfz/n8aIFhN/jCE/rCmcxabB6jOOHV+0WNnylOxaxBQPSvcWklhA==}
     engines: {node: '>=12'}
 
-  swiper@12.0.1:
-    resolution: {integrity: sha512-Fi+gNw/tfc4hsGowQU5tRC/f1HFknkh4Vz8PaDI4JTinLUMTwhZyaovcH/va+iXq98BNUHN5ok0c2lEI82Fsgw==}
+  swiper@12.0.2:
+    resolution: {integrity: sha512-y8F6fDGXmTVVgwqJj6I00l4FdGuhpFJn0U/9Ucn1MwWOw3NdLV8aH88pZOjyhBgU/6PyBlUx+JuAQ5KMWz906Q==}
     engines: {node: '>= 4.7.0'}
 
   swr@2.3.6:
@@ -4464,7 +4464,7 @@ snapshots:
     dependencies:
       ansi-regex: 6.2.2
 
-  swiper@12.0.1: {}
+  swiper@12.0.2: {}
 
   swr@2.3.6(react@19.1.1):
     dependencies:
